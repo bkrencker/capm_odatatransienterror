@@ -4,11 +4,39 @@
 			<pages>
 				<Page id="page" title="{i18n>title}">
 					<content>
-						<List items="{/Authors}">
+						<Table id="idTable" mode="SingleSelectLeft" items="{
+								path: '/Authors',
+								parameters: {
+									$count: true,
+									$$updateGroupId : 'updateGroup'
+								}
+							}">
+							<headerToolbar>
+								<OverflowToolbar>
+									<content>
+										<Button icon="sap-icon://add" text="Add" press=".onAdd"/>
+										<Button icon="sap-icon://save" text="Save" press=".onSave"/>
+										<Button icon="sap-icon://reset" text="Cancel" press=".onCancel"/>
+									</content>
+								</OverflowToolbar>
+							</headerToolbar>
+							<columns>
+								<Column>
+									<Text text="ID"/>
+								</Column>
+								<Column>
+									<Text text="Name"/>
+								</Column>
+							</columns>
 							<items>
-								<StandardListItem title="{name}"/>
+								<ColumnListItem>
+									<cells>
+										<Input value="{ID}"/>
+										<Input value="{name}"/>
+									</cells>
+								</ColumnListItem>
 							</items>
-						</List>
+						</Table>
 					</content>
 				</Page>
 			</pages>
