@@ -1,0 +1,17 @@
+<mvc:View controllerName="com.odatatransient.ui5.controller.Working" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+						<List items="{/Authors}">
+							<items>
+								<StandardListItem title="{name}"/>
+							</items>
+						</List>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
