@@ -24,7 +24,6 @@
 			"version": "1.40.12"
 		}
 	},
-
 	"sap.ui": {
 		"technology": "UI5",
 		"icons": {
@@ -41,7 +40,6 @@
 			"phone": true
 		}
 	},
-
 	"sap.ui5": {
 		"flexEnabled": false,
 		"rootView": {
@@ -55,7 +53,10 @@
 			"libs": {
 				"sap.ui.core": {},
 				"sap.m": {},
-				"sap.ui.layout": {}
+				"sap.ui.layout": {},
+				"sap.ui.table": {
+					"minVersion": ""
+				}
 			}
 		},
 		"contentDensities": {
@@ -99,6 +100,12 @@
 				"name": "RouteWorking",
 				"pattern": "RouteWorking",
 				"target": ["TargetWorking"]
+			}, {
+				"name": "Error",
+				"pattern": "Error",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["Error"]
 			}],
 			"targets": {
 				"TargetWorking": {
@@ -107,6 +114,11 @@
 					"clearControlAggregation": false,
 					"viewId": "Working",
 					"viewName": "Working"
+				},
+				"Error": {
+					"viewType": "XML",
+					"viewName": "Error",
+					"viewId": "Error"
 				}
 			}
 		}

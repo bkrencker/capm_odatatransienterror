@@ -17,6 +17,8 @@
 										<Button icon="sap-icon://add" text="Add" press=".onAdd"/>
 										<Button icon="sap-icon://save" text="Save" press=".onSave"/>
 										<Button icon="sap-icon://reset" text="Cancel" press=".onCancel"/>
+										<ToolbarSpacer />
+										<Button text="Go to Error Page" press=".onNavigateToErrorPage"/>
 									</content>
 								</OverflowToolbar>
 							</headerToolbar>

@@ -7,18 +7,18 @@ sap.ui.define([
 
 	return Controller.extend("com.odatatransient.ui5.controller.Working", {
 		onInit: function () {
-
+			
 		},
-		
-		onAdd: function(oEvent) {
+
+		onAdd: function (oEvent) {
 			var oBinding = this.getView().byId("idTable").getBinding("items");
 			var oContext = oBinding.create({
 				"ID": "",
 				"name": ""
 			});
 		},
-		
-		onSave: function(oEvent) {
+
+		onSave: function (oEvent) {
 			var fnSuccess = function () {
 				MessageToast.show("Success");
 			}.bind(this);
@@ -29,9 +29,14 @@ sap.ui.define([
 
 			this.getView().getModel().submitBatch("updateGroup").then(fnSuccess, fnError);
 		},
-		
-		onCancel: function(oEvent) {
+
+		onCancel: function (oEvent) {
 			this.getView().byId("idTable").getBinding("items").resetChanges("updateGroup");
+		},
+
+		onNavigateToErrorPage: function (oEvent) {
+			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			oRouter.navTo("Error");
 		}
 	});
 });
